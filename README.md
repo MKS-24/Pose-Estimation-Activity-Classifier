@@ -9,19 +9,17 @@ This repository implements a complete Computer Vision pipeline to detect human b
 
 ## Project Structure
 ```text
-├── pose_landmarker.task   # Downloaded MediaPipe Pose Landmarker model bundle
+├── pose_landmarker.task   # Downloaded MediaPipe Pose Landmarker model bundle (Not uploaded on githup due to its large size)
 ├── squat_sample.mp4       # Raw input video clip
 ├── output_pose.mp4        # Annotated video output with skeleton overlay & live stats
 ├── pose_data.csv          # Extracted raw and smoothed joint angle metrics per frame
 ├── angle_tracking.png     # High-resolution joint angle tracking visualization
-├── evaluation_summary.txt # Quantitative performance metrics summary
 ├── screenshot_20.png      # Representative screenshot (Standing state)
 ├── screenshot_90.png      # Representative screenshot (Squatting state)
 ├── report.pdf             # Academic 2-page report (PDF format)
 ├── download_sample.py     # Script to download the video and pose landmarker model
 ├── pose_analysis.py       # Core pose landmark detection & angle calculation script
-├── evaluate_and_plot.py   # Code for manual ground truth comparison, plotting, & metrics
-└── generate_report.py     # Script using ReportLab to build the final PDF report
+└── evaluate_and_plot.py   # Code for manual ground truth comparison, plotting, & metrics
 ```
 
 ---
@@ -73,7 +71,7 @@ The classifier predictions were compared frame-by-frame against a manually label
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Pose-Estimation-Activity-Classifier.git
+   git clone https://github.com/MKS-24/Pose-Estimation-Activity-Classifier.git
    cd Pose-Estimation-Activity-Classifier
    ```
 
@@ -81,12 +79,6 @@ The classifier predictions were compared frame-by-frame against a manually label
    ```bash
    pip install opencv-python mediapipe numpy pandas matplotlib reportlab scikit-learn requests
    ```
-
-3. **Download Assets (Video & Model)**:
-   ```bash
-   python download_sample.py
-   ```
-
 ---
 
 ## Running the Pipeline
@@ -104,9 +96,3 @@ To run the pipeline from scratch and regenerate all outputs:
    python evaluate_and_plot.py
    ```
    *Prints metrics, prints transitions, and saves `angle_tracking.png`.*
-
-3. **Generate Final Academic PDF Report**:
-   ```bash
-   python generate_report.py
-   ```
-   *Creates the submission-ready `report.pdf` incorporating all statistics and graphs.*
